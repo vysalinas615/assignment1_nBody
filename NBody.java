@@ -104,15 +104,6 @@ public class NBody<T> extends JPanel implements ActionListener
          
 		NBody<Object> p0 = new NBody<Object>();
 		
-		/*String pName;
-      	 for (int j=0; j<aList.size;j++)
-      	 {
-      		 if (j%7==0)
-      		 {
-      			pName = (aList.get(j));
-      			System.out.println("Name set to: "+pName);
-      		 }
-      	 }*/
       	 
 		NBody<Object> p1 = new NBody<Object>();
 		//this makes an instance of the planet object
