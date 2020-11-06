@@ -49,58 +49,58 @@ public class NBody<T> extends JPanel implements ActionListener
 	public static void main(String[] args) throws IOException, Exception
 	{
 		String line;
-        BufferedReader in;
-        LinkedList<String> newList = new LinkedList<String>();
-        ArrayList<String> aList = new ArrayList<String>();
+		BufferedReader in;
+		LinkedList<String> newList = new LinkedList<String>();
+		ArrayList<String> aList = new ArrayList<String>();
 
-         in = new BufferedReader(new FileReader("nbody_input.txt"));
-         line = in.readLine();
-         int numOfPlanets = 0;
-   
-         while(line != null)
-         {
-        	 //first line is the type (either arraylist or linkedlist), second line is the distance 
-        	 
-        	 System.out.println("LINE:"+line);
-        	 //aList.add(line.split(","));
-        	 aList.add(line);
-        
-        	 line = in.readLine();
-         }
-         
-         String theType = aList.get(0);
-         //int distance = Integer.parseInt(aList.get(1));
-         String distance = aList.get(1);
-         System.out.println();
-         System.out.println("TYPE:"+theType);
-         System.out.println("DISTANCE: "+distance);
-         aList.remove(0);
-         //first removes the type
-         aList.remove(0);
-         //second removes the distance
-         
-         
-         
-         if (theType.trim().equals("ArrayList"))
+		 in = new BufferedReader(new FileReader("nbody_input.txt"));
+		 line = in.readLine();
+		 int numOfPlanets = 0;
+
+		 while(line != null)
 		 {
-			 System.out.println("It is an array, new arraylist created. ");
-			 ArrayList<String> nbodyList = new ArrayList<String>();
+			 //first line is the type (either arraylist or linkedlist), second line is the distance 
+
+			 System.out.println("LINE:"+line);
+			 //aList.add(line.split(","));
+			 aList.add(line);
+
+			 line = in.readLine();
 		 }
-		 
-		 else
-		 {
-    		 System.out.println("It is a linked list, new linkedlist created. ");
-    		 LinkedList<String> nbodyLinked = new LinkedList<String>();
+
+		 String theType = aList.get(0);
+		 //int distance = Integer.parseInt(aList.get(1));
+		 String distance = aList.get(1);
+		 System.out.println();
+		 System.out.println("TYPE:"+theType);
+		 System.out.println("DISTANCE: "+distance);
+		 aList.remove(0);
+		 //first removes the type
+		 aList.remove(0);
+		 //second removes the distance
+
+
+
+		 if (theType.trim().equals("ArrayList"))
+		{
+			System.out.println("It is an array, new arraylist created. ");
+			ArrayList<String> nbodyList = new ArrayList<String>();
+		}
+
+		else
+		{
+			System.out.println("It is a linked list, new linkedlist created. ");
+			 LinkedList<String> nbodyLinked = new LinkedList<String>();
+		}
+
+		 //prints the array
+		 System.out.print("{");
+		 for (int i=0;i<aList.size;i++)
+		 { 
+			System.out.print(aList.get(i)+" ");
+			numOfPlanets++;
 		 }
-         
-         //prints the array
-         System.out.print("{");
-         for (int i=0;i<aList.size;i++)
-         { 
-        		 System.out.print(aList.get(i)+" ");
-        		 numOfPlanets++;
-         }
-         System.out.print("}");
+		 System.out.print("}");
          
 		NBody<Object> p0 = new NBody<Object>();
 		
